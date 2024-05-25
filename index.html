@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
-        <p id="onlineStatus"></p>
+    <div class="body">
+      <div class="screen">
+        <textarea
+          type="text"
+          id="screen"
+          class="joke-screen"
+          readonly
+        ></textarea>
       </div>
-    <div>   
-      <input type="text" readonly id="screen" />
+      <div class="controls">
+        <button id="fetchJokes" class="generate">Generate</button>
+        <button id="copy" class="copy">Copy</button>
+      </div>
+      <div class="status">
+        <p id="onlineStatus" class="onlineStatus"></p>
+      </div>
     </div>
-    <button id="fetchJokes">Generate</button>
-    <button id="copy">Copy</button>
-
     <script src="script.js"></script>
   </body>
 </html>

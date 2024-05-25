@@ -8,23 +8,35 @@ const copy = document.getElementById("copy");
 //   screen.value = `${data.setup} - ${data.punchline}`;
 // }
 const onlineStatus = document.getElementById("onlineStatus");
-    
+const showMsg = (content) => {
+  onlineStatus.textContent = content;
+  onlineStatus.classList.remove("remove");
+  setTimeout(() => {
+    onlineStatus.classList.add("remove");
+  }, 3000);
+};
 fetchJokes.addEventListener("click", () => {
   fetch(API)
     .then((response) => response.json())
-    .then((data) => (screen.value = `${data.setup} - ${data.punchline}`))
+    .then((data) => {
+      if (data) {
+        screen.value = `${data.setup} - ${data.punchline}`;
+      } else {
+        screen.value = "Loading...";
+      }
+    })
     .catch((error) => {
-      console.warn(error);
+      showMsg(`Error, Try Later ❗`);
     });
 });
 
 copy.addEventListener("click", () => {
   navigator.clipboard.writeText(`${screen.value}`);
-  alert("Copied to Clipboard");
+  showMsg("Copied to Clipboard.");
 });
 
 if (navigator.onLine) {
-  onlineStatus.textContent = `You're Online ✅`;
+  showMsg(`You're Online 💡`);
 } else {
-  onlineStatus.textContent = `Check Connection and Try again ❗`;
+  showMsg(`Check Connection and Try again ❗`);
 }

@@ -1,55 +1,70 @@
-#screen {
-    width: 70%;
-    padding: 5px, 10px;
-    height: 50px;
-    margin-top: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.screen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.joke-screen {
+    border-radius: .4em;
+    width: 90%;
+    padding: 1em .5em;
+    padding-bottom: 0;
+    resize: none;
     text-align: center;
-    border: 2px ghostwhite solid;
-    border-radius: 10px;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-
+    min-height: 500px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    font-style: normal;
 }
 
-div {
-    text-align: center;
-}
-
-#fetchJokes {
+button {
     border: none;
-    padding: 10px 30px;
-    background-color: rgb(184, 57, 184);
-    color: white;
-    border-radius: 8px;
-    font-size: 20px;
-    margin-left: 42%;
-    margin-top: 20px;
-    cursor: grab;
+    outline: none;
+    padding: 1em 2rem;
+    background-color: cornflowerblue;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    margin: 1rem auto;
+    border-radius: .4em;
+    font-style: normal;
+    transition: all .2s;
 }
 
-#copy {
-    border: none;
-    padding: 10px 40px;
-    background-color: rgb(184, 57, 184);
-    color: white;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: copy;
-    margin-left: 2px;
+button:hover {
+    background-color: rgb(65, 95, 152);
 }
 
-#fetchJokes:hover {
-    background-color: rgb(117, 72, 117);
+button:active {
+    scale: .9;
 }
 
-#copy:hover {
-    background-color: rgb(117, 72, 117);
+.onlineStatus {
+    visibility: visible;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
-#onlineStatus {
-    margin-left: 42px;
-    padding: 10px;
-    background-color: lightblue;
-    display: inline;
-    margin-top: 100px;
+.remove {
+    visibility: hidden;
 }
